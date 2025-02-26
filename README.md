@@ -1,1 +1,9 @@
 # Factorization_new
+
+Publishing my work-in-progress.
+
+This demonstrates using quadratic coefficients to generate smooth numbers.
+Current version run with: python3 QS.py -keysize 30 
+
+Will only factor small semi-primes for now, this is a work in progress.
+TO DO: When we generate smooth candidates, if the remainder is not 1 or -1, we can continue sieving this easily and find smooths a lot faster. I will try to finish this before the end of next weekend. Aside from that, everything else works as expected. Just the smooth generation is a bit sloppy.
