@@ -1,5 +1,5 @@
 ###Note: Modified https://github.com/NachiketUN/Quadratic-Sieve-Algorithm/blob/master/src/main.py with my own number theoretical findings.
-
+###WORK IN PROGRESS, STILL NEED TO FINISH THE SMOOTH GENERATION LOGIC, WHAT IS IN HERE NOW IS VERY BARE BONES
 
 from math import fabs, ceil, sqrt, exp, log
 import random
