@@ -415,12 +415,12 @@ def gen_smooths(sol,mod,factor_list,n,mod2):#,primeslist2):
     i=0
     while i < len(seq):
         rem=seq[i]
+        while rem%mod2 == 0:
+            rem=rem//mod2
+            if rem ==0: #Dunno?
+                break
         j=0
         while j < len(factor_list):
-            while rem%mod2 == 0:
-                rem=rem//mod2
-                if rem ==0: #Dunno?
-                    break
             while rem%factor_list[j]==0:
                rem=rem//factor_list[j]
                if rem ==0: #Dunno?
