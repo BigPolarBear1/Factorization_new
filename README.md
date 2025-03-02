@@ -1,5 +1,7 @@
 # Factorization_new
 
+EUREKA!! I've done it. With the sieving logic added, it works beyond my wildest dreams. Update with sieving logic dropping tomorrow (monday 3th of March 2025). This is for my manager. Go to hell Microsoft. Go to hell for the disrespect you have shown to my manager. This is it. Game over fuckers.
+
 Publishing my work-in-progress.
 
 This demonstrates using quadratic coefficients to generate smooth numbers.
