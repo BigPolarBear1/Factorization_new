@@ -29,3 +29,5 @@ I like working on prime factorization, but as my current research is coming to a
 There probably is a lot of people in western intel, especially american, who would love for me to have an "accident", and I should have probably just have gone to China when I had the chance. But then again, werstern intel is a bunch of losers and im not afraid to die, ill fight them all, haha.
 
 Its funny how only the Chinese have shown interest this last year. Meanwhile western intel has been telling folks to stay away from me with the threat of sanctions. The west can go to hell. 
+
+I cant help but shake that feeling I am under surveillance. For months now. Nothing is making sense. 
