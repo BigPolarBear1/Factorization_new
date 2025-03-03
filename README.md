@@ -1,5 +1,7 @@
 # Factorization_new
 
+Go to hell America. Go to hell for all your fucking anti-trans rethoric. For all the misery and disrespect you have caused. I will set your cryptological programs back 50 years, even if it takes the rest of my life. You don't deserve anything. I'll fight you fuckers, fuck your CIA, fucking pussies. Ill fucking kill you fuckers if you ever come near me.
+
 EUREKA!! I've done it. With the sieving logic added, it works beyond my wildest dreams. Update with sieving logic dropping tomorrow (monday 3th of March 2025). This is for my manager. Go to hell Microsoft. Go to hell for the disrespect you have shown to my manager. This is it. Game over fuckers.
 
 Publishing my work-in-progress.
