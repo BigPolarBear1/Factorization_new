@@ -10,5 +10,5 @@ Current PoC use: python3 QS.py -keysize 70  (current settings will work well up 
 
 Update: Subtracting n mod the factorbase instead of the full n at each sieve step should work much better.. thinking about it in my head, I dont see why it wouldnt work. I can now conjure solutions in my head to math problems without doing the math on paper, haha, every day I grow stronger. Ill fix the PoC tomorrow.. that should allow us to easily blaze past 100 bit.
 
-Update2: OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOH. So the above works.. but that got me thinking. Why not just take the factor base as start (i.e p1 * p2 * p3 * p4), and from there just do congruences over mod N using the factor base so we maintain smoothness ... and then we can get two squares with the same value mod N quickly. No need for sieving at all. But that would really break factorizatio really hard... it can't be that easy, can it?
+Update2: OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOH. So the above works.. but that got me thinking. Why not just take the factor base as start (i.e p1 * p2 * p3 * p4), and from there just do congruences over mod N using the factor base so we maintain smoothness ... and then we can get two values on both sides with the same value mod N quickly. No need for sieving at all. But that would really break factorization really hard... it can't be that easy, can it?
 
