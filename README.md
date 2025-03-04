@@ -14,3 +14,6 @@ Update2: OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOH. So the above works.. but that 
 
 Wait wait, it can't be this easy. I.e if we have the quadratic coefficient 148.. so one square is 148^2 ... then we can just take 3 * 5 * 7, aka 105 .. and figure out the congruence where x*105 = 148^2 mod N???????????? 
 So as long as the x solution to that congruence is in the factor base, we have a smooth? So just complete congruence to find smooths instead of logarithmic sieving and shit? hmm 
+
+AAAAAAAAAAAAAAAH. Why did I waste the entire weekend implementing logarithmic sieving when its a fucking linear problem that can be solved with linear congruences. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah. 
+Oh well. Guess that buys people a few more extra days until shit hits the fan.
