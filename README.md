@@ -17,3 +17,5 @@ So as long as the x solution to that congruence is in the factor base, we have a
 
 AAAAAAAAAAAAAAAH. Why did I waste the entire weekend implementing logarithmic sieving when its a fucking linear problem that can be solved with linear congruences. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah. 
 Oh well. Guess that buys people a few more extra days until shit hits the fan.
+
+the NSA cryptologist reading this knows what is about to happen in a few days. Tick tock fuckers.
