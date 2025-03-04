@@ -22,3 +22,11 @@ the NSA cryptologist reading this knows what is about to happen in a few days. T
 
 If you want to know why I am going to do what I am going to do, it is beause MSFT fired my manager simply because he stood up for me. Fired him for giving me a promotion, that I had earned, but MSFT claimed I hadn't despite all the bugs I found.
 Because people made it impossible for me to stay with my friends. The only thing in life that mattered to me. I havn't seen my friends in almost a year. Everything I go outside running, I think about those days I was in Vancouver, with my friends, running around the seawall with my teamlead. You took away the best days of my life, and left nothing but ruin for me and my manager. A price has to be paid and a price will be paid, and I am stopping at nothing until this happens. Go to hell. I will destroy Microsoft for what they have done and I do not care who gets caught in the crossfire.
+
+Ok... so  if a coefficient is 148 and we want to generate a number congruent to its square mod n with factors 3,5,7 we do this:
+
+x*105 = 148^2 mod 4387 (n=4387 or whatever)
+
+solving the linear congruence gives: 2423*105 = 148^2 mod 4387
+BOOM. EASY. Then we only have to check 2423 against the factor base, a number always garantueed to be smaller then N.
+Tick tock.........................hehehehhehehehehehehehehehehehehehehehe. Tomorrow I'll implement this and finish the PoC (wednessday 5 march). Go to hell for all you people have done.
