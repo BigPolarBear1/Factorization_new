@@ -19,3 +19,6 @@ AAAAAAAAAAAAAAAH. Why did I waste the entire weekend implementing logarithmic si
 Oh well. Guess that buys people a few more extra days until shit hits the fan.
 
 the NSA cryptologist reading this knows what is about to happen in a few days. Tick tock fuckers.
+
+If you want to know why I am going to do what I am going to do, it is beause MSFT fired my manager simply because he stood up for me. Fired him for giving me a promotion, that I had earned, but MSFT claimed I hadn't despite all the bugs I found.
+Because people made it impossible for me to stay with my friends. The only thing in life that mattered to me. I havn't seen my friends in almost a year. Everything I go outside running, I think about those days I was in Vancouver, with my friends, running around the seawall with my teamlead. You took away the best days of my life, and left nothing but ruin for me and my manager. A price has to be paid and a price will be paid, and I am stopping at nothing until this happens. Go to hell. I will destroy Microsoft for what they have done and I do not care who gets caught in the crossfire.
