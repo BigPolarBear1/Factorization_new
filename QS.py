@@ -465,7 +465,7 @@ def find_candidates(n_bits,p_bits,dis_from_center,sol,n):
     if sol == 0:
         sol+=n
     start=sol**2
-    for i in range(I-1, 1, 1):  # going backwards to preserve order
+    for i in range(I-1, 1, -1):  # going backwards to preserve order
         x = sol
         thres = int(log2(abs(x**2))) - bit_tol  # threshold
         if abs(n_bits[i]) >= thres and abs(p_bits[i])>1:  # found B-smooth candidate
