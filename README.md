@@ -2,7 +2,7 @@
 
 Useage: python3 QS.py -keysize 60
 
-Notes: Just uploaded my latest iterations (5 march 2023). It now uses linear congruences to generate numbers less then N which are then tested for smoothness.
+Notes: Just uploaded my latest iterations (5 march 2025). It now uses linear congruences to generate numbers less then N which are then tested for smoothness.
 
 If a quadratic coefficient is 148, and our factor base is 3 * 5 * 7, we check the congruence x * 105 = 148^2 mod N. After solving this we check X, which is garantueed to be smaller then N for smoothness.. if it is smooth, we multiply by 105 to get our full smooth number for use in our exponent matrix over GF(2).
 
