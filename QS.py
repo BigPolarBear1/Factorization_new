@@ -1,8 +1,3 @@
-##Author: Essbee Vanhoutte
-##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WORK IN PROGRESS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-##Modified version of: https://github.com/Maosef/Quadratic-Sieve
-##Added my own number theoretical results to use Quadratic coefficients
-
 from math import fabs, ceil, sqrt, exp, log, log2
 import random
 from itertools import chain
@@ -18,14 +13,15 @@ from timeit import default_timer
 key=0                 #Define a custom modulus to factor
 keysize=12            #Generate a random modulus of specified bit length
 workers=8           #max amount of parallel processes to use
-sieve_interval=100000
+sieve_interval=100 #Amount of congruences to solve for each quadratic coefficient
+g_min_fac=10 #Amount of factors used in linear congruence.. to do: I need to research selection of these to keep result of the congruence as low as possible
+base=6 #Increase to generate more quadratic coefficients
+second_base=500 #factor base, at size 2000 gauss elim will take about a minute.
+
+
 g_enable_custom_factors=0
 g_p=107
 g_q=41
-base=5 #Used for generating quadratic coefficients.. need to increase this or sieve_interval if we cant construct a big enough matrix and increasing the factor base is not an option.
-bit_tol=-5 #Needs to be adjusted based on base value.... uncomment print("psmooth_cands: ",len(psmooth_cands)) in gen_smooths to help adjust it... function should return sufficient candidates.
-second_base=1000 #factor base, at size 2000 gauss elim will take about a minute.
-
 ##Key gen function##
 def power(x, y, p):
     res = 1;
@@ -122,8 +118,8 @@ def gcd(a,b): # Euclid's algorithm
 
 def solve_lin_con(a,b,m):
     ##ax=b mod m
-    g=gcd(a,m)
-    a,b,m = a//g,b//g,m//g
+    #g=gcd(a,m)
+    #a,b,m = a//g,b//g,m//g
     return pow(a,-1,m)*b%m  
 
 def isqrt(n): # Newton's method, returns exact int for large squares
@@ -309,7 +305,13 @@ def solve(solution_vec,smooth_nums,N,xlist):
     for n in x_nums:
         b *= n
     a = isqrt(Asquare)
-   # print(str(a)+"^2 = "+str(b)+"^2 mod "+str(N))
+    #if a**2 != Asquare:
+      #  print("ERROR")
+      #  time.sleep(10000)
+   # if Asquare%N != (b**2)%N:
+     #   print("ERROR222222222222")
+    #    time.sleep(100000)     
+    print(str(a)+"^2 = "+str(b)+"^2 mod "+str(N))
     if b > a:
         temp=a
         a=b
@@ -340,73 +342,73 @@ def create_partial_results(sols):
         i+=2    
     return new,tot    
 
-def verify_smooth(factor_base, smooth_cands, x_cands):
-    '''verifies smooth relations from candidates'''
-    def factor(n, factor_base): # trial division from factor base
-        factors = []
-        if n < 0:
-            factors.append(-1)
-            n //= -1
-                
-        for p in factor_base:
 
-            while n % p == 0:
-                factors.append(p)
-                n //= p
-        if n == 1 or n == -1:
-            return factors
-            
-        else:
-            return None
-
-    smooth_nums = []
+def factor(n, factor_base): # trial division from factor base
     factors = []
-    x_list = []
-        
-    for i in range(len(smooth_cands)):
+    for p in factor_base:
+        if n == 0:
+            print("shouldn't happen")
+        while n % p == 0:
+            factors.append(p)
+            n //= p
+    if n == 1 or n == -1:
+        return factors
             
-        fac = factor(smooth_cands[i], factor_base)
-            
-        if fac:
-            smooth_nums.append(smooth_cands[i])
-            factors.append(fac)
-            x_list.append(x_cands[i])
-    return (smooth_nums, x_list, factors)
-def gen_smooths(sol,mod,factor_list,n,mod2):
-    global sieve_interval
-    start=sol**2
-    n_bits = [0 for x in range(sieve_interval)]
-    p_bits = [0 for x in range(sieve_interval)]
+    else:
+        return None    
+
+def find_smooths(sol,n,factor_list):
+    smooths=[]
+    factors=[]
+    x_list=[]
     i=0
-    n_indices=[]
-    p_indices=[]
+    lmod=1
+    solsq=sol**2
+    check_ceil=n
+    min_fac=g_min_fac
+    enum=[]
+    while i < min_fac:
+        enum.append(factor_list)
+        i+=1
+    i=0
+    while i < sieve_interval:
+        for md in itertools.product(*enum):
+            if i > sieve_interval-1:
+                i+=1
+                break
+            lmod=1
+
+            for nm in md:
+                lmod*=nm 
+            #print(lmod)    
+            try: ### this way we can remove gcd() from solve_lin_con, but need to handle errors... error indicates factor of N is found.. should add that later.
+                ret=solve_lin_con(lmod,solsq%n,n)
+            except Exception:
+                print("error in solve_lin_con.. found a factor TO DO: implement code")
+                i+=1
+                continue
+            if ret == 0 or ret > check_ceil:
+                i+=1
+                continue
+            f=factor(ret,factor_list)
+            if f != None:
+                smooth=ret*lmod
+                if smooth not in smooths and smooth != solsq:
+                    for nm in md:
+                        f.append(nm)
+                    smooths.append(smooth)
+                    factors.append(f)
+                    x_list.append(sol)
+            i+=1
+        enum.append(factor_list)     
+   
+    return smooths,factors,x_list
+
+def gen_smooths(sol,mod,factor_list,n,mod2):
     smooth_nums=[]
     x_list=[]
     factors=[]
-    while i < len(factor_list):
-        ret=solve_lin_con(n,start%factor_list[i],factor_list[i])
-        n_indices.append(ret)
-        p_indices.append(factor_list[i]-ret)
-        i+=1
-    
-
-   
-    n_indices, n_bits=sieve(n_indices, n_bits,factor_list)
-    p_indices, p_bits=sieve(p_indices, p_bits,factor_list)
-        
-    nsmooth_cands, nx_cands, psmooth_cands, px_cands=find_candidates(n_bits,p_bits,0,sol,n)
-    n_smooths, n_xs, n_factors = verify_smooth(factor_list, nsmooth_cands, nx_cands)
-    p_smooths, p_xs, p_factors = verify_smooth(factor_list, psmooth_cands, px_cands)
-    #print("psmooth_cands: ",len(psmooth_cands))
-    smooth_nums += p_smooths
-    x_list += p_xs
-    factors += p_factors
-
-    smooth_nums = n_smooths + smooth_nums 
-    x_list = n_xs + x_list
-    factors = n_factors + factors
-
-
+    smooth_nums,factors,x_list=find_smooths(sol,n,factor_list)
     return smooth_nums, x_list, factors
 
 def generate_smooths(procnum,return_dict,n,enum,flist,mod,primeslist2):
@@ -426,60 +428,18 @@ def generate_smooths(procnum,return_dict,n,enum,flist,mod,primeslist2):
         factor_list=primeslist2
         sols=sols%mod
         smooth_nums, x_list, factors=gen_smooths(sols,mod,factor_list,n,mod2)
-        sm.extend(smooth_nums)
-        xlist.extend(x_list)
-        flist.extend(factors)
+        c=0
+        while c < len(smooth_nums):
+            if smooth_nums[c] not in sm:
+                sm.append(smooth_nums[c])
+                xlist.append(x_list[c])
+                flist.append(factors[c])
+            c+=1      
         test[0]=sm
         test[1]=xlist
         test[2]=flist
         return_dict[procnum]=test
     return 0         
-
-def sieve(indices, bits, base_list):
-    global sieve_interval
-    base_bits = [round(log2(p)) for p in base_list]
-    I=sieve_interval
-    new_indices = []
-    k=0
-    while k<len(indices):
-        p=base_list[k]
-        starts = indices[k]
-        if starts >= I:
-            indices[k]=starts-I #For next round
-            continue
-        for j in range(starts, len(bits), p):
-            bits[j] += base_bits[k] 
-        indices[k] = j + p - I
-        k+=1
-    new_indices.append(starts)
-    return new_indices, bits
-    
-def find_candidates(n_bits,p_bits,dis_from_center,sol,n):
-    global sieve_interval
-    I=sieve_interval
-    nx_cands = []  
-    nsmooth_cands = []
-    px_cands = []  
-    psmooth_cands = []
-
-    if sol == 0:
-        sol+=n
-    start=sol**2
-    for i in range(I-1, 1, -1):  # going backwards to preserve order
-        x = sol
-        thres = int(log2(abs(x**2))) - bit_tol  # threshold
-        if abs(n_bits[i]) >= thres and abs(p_bits[i])>1:  # found B-smooth candidate
-            nsmooth_cands.append(start-i*n)
-            nx_cands.append(x)
-
-    for i in range(1,I):
-        x = sol
-        thres = int(log2(abs(x**2))) - bit_tol  
-        if abs(p_bits[i]) >= thres and abs(p_bits[i])>1 :  # found B-smooth candidate
-            psmooth_cands.append(start+i*n)
-            px_cands.append(x)
-    #print("psmooth_cands: ",psmooth_cands)        
-    return nsmooth_cands, nx_cands, psmooth_cands, px_cands
 
 def launch(lists,n,primeslist2):
     sr=round(n**0.5)
@@ -573,6 +533,7 @@ def make_vector(n_factors,factor_base):
             exp_vector[j] = (exp_vector[j] + n_factors.count(factor_base[j])) % 2
     return exp_vector
 def QS(n,factor_list,sm,xlist,flist):
+
     if len(sm) < len(factor_list):
         print("[i]Not enough smooth numbers found")
         return 0
@@ -582,6 +543,13 @@ def QS(n,factor_list,sm,xlist,flist):
         del sm[len(factor_list):]
         del xlist[len(factor_list):]
         del flist[len(factor_list):]  
+
+
+    #print("sm: ",sm)
+    #print("xlist: ",xlist)
+    #print("flist: ",flist)
+    #print("factor_list: ",factor_list)
+    #print("n: ",n)        
     is_square, t_matrix = is_square, t_matrix = build_matrix(factor_list, sm, flist)#build_matrix(sm,factor_list)
     print("[*]Starting Gaussian elimination")
     start=default_timer()
