@@ -18,3 +18,12 @@ Great, the wifi just went out. Must have pissed off the losers at the NSA (excep
 hmm, so its just multiplying by inverses to combine those x solutions to my linear congruences . So that does give some clue as to how small values can potentially be found quickly. Ill fix my PoC tomorrow, although my wifi going down is quite omnious. Either way, cant stop me, youll have to kill me, haha. Ill fight you all. Fuck you for firing my manager, you fired the best manager in the entire industry simply bc he supported me. This world will burn now.
 
 Update thursday 6 march: Hmm, so I just need to solve linear congruences for each unique prime and calculate their inverse in mod N.. then for any combination of those primes, we just multiply by the inverses we found. Then find small values mod N is a harder problem, but atleast we can very quickly generate them now. I guess we could just generate them in bulk, sort them and only check the smaller ones for smoothness so we dont waste time on numbers that arn't likely going to be smooth with a smaller factor base. I think for now that's a good middle ground until I find a better mathematical tool to approach this. I guess, in the end, we could just reduce it to residue math, and find x values that are atleast divisible by one or more factors from the factor base..  but let me implement the easy method first and then figure that out..
+
+Update: Fuck, I WAS ON THE RIGHT TRACK EARLIER. 
+so if N = 37*47
+and the quadratic coefficient is 1404
+Lets say we have the congruence: x * 29 = 1404^2 mod 37 * 47
+Then x is 92. 92 is divisble by for, aka:
+23 * 4 * 29 = 1404^2 mod 37 * 47
+
+So we do this not just for prime 29, but for a bunch of others too.. and if 23 is not in our factor base.. we can multiply it by an inverse of a prime in our factor base and hopefully that product does completely factor to our factor base... and that's how it is done. Boom. Give me a few days to write this the best way possible in code and we're there.
