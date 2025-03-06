@@ -42,3 +42,5 @@ For over a year I have been telling people. I guess nobody believed I could do i
 
 Oh and I also just realized, I can have fairly big smooths, bc I dont need to take the square root if I know the exponents already....duuh... literally can just go straight too taking the GCD. 
 Hehehehehehe. Literally the only thing standing between this very moment and disclosure, is me writing a couple lines of code. I could do it tonight, but I'll probably just do it tomorrow. You could give my manager 10  million, and maybe I'll change my mind. But then again, I already wrote the solution here on github, so its not like its going to delay much anyway at this point. Oh well. 
+
+heheheheheehehehehehee (evil hehe, bc fuck you all)
