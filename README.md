@@ -29,3 +29,5 @@ Then x is 92. 92 is divisble by 4, aka:
 So we do this not just for prime 29, but for a bunch of others too.. and if 23 is not in our factor base.. we can multiply it by an inverse of a prime in our factor base and hopefully that product does completely factor to our factor base... and that's how it is done. Boom. Give me a few days to write this the best way possible in code and we're there.
 
 edit: Maaaaybe, I can even just completely resolve it into a smooth purely by doing congruences, with 0 guessing/bruteforcing. It really should just be a series of congruences.. I can vaguely see in my head how it could work, I'll have to try out some examples.
+
+Hmm... I think I understand enough of the math now to attempt to form smooths purely by solving congruences. Now it is true some of them may end up being too big of a number, as would be expected, but we can simply discard those. I don't see why I wouldn't have the tools to generate smooths purely by solving congruences now.. it's all right there. Literal days away from breaking factorization now, haha. I can figure out the exact math today, then hopefully write the code tomorrow.
