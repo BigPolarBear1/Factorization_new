@@ -37,3 +37,5 @@ A key insight is the realization that over a factor base, any of these numbers c
 EUREKA!!!!!!!!!!!!!!!!!!!!! I FIGURED IT OUT!!!!!!!!!!!!!!!!!! USING INVERSES WE CAN EASILY FIND CONGRUENCES WHERE X IS 1. FUCK YEA. TOMORROW IS THE DAY (FRIDAY), PREPARE YOURSELVES. FACTORIZATION IS ABOUT TO FALL FUCKERS. THATS WHAT YOU GET FOR FIRING MY MANAGER. HE WAS THE BEST MANAGER IN THE WORLD, NOW GO TO HELL FUCKERS.
 
 The voices in my head told me how to break factorization bc you fired my manager. All of this is happening because you fired my manager. You fuckers did the one thing you shouldn't have done, and that is going after my manager. Go to hell.
+
+For over a year I have been telling people. I guess nobody believed I could do it. None of this makes any sense. Oh well, either tomorrow or saturday is the day.. I can generate smooths now using only linear congruences... some of those numbers will be huge and not great to use, but still, I can find them by just finding inverses and solving linear congruences.... lol... if people knew what that meant... what is about to happen. Nobody seems to care. So be it. Tick tock, time has ran out. Good luck in the next few days.
