@@ -21,9 +21,9 @@ Update thursday 6 march: Hmm, so I just need to solve linear congruences for eac
 
 Update: Fuck, I WAS ON THE RIGHT TRACK EARLIER. 
 so if N = 37*47
-and the quadratic coefficient is 1404
-Lets say we have the congruence: x * 29 = 1404^2 mod 37 * 47
-Then x is 92. 92 is divisble by for, aka:
+and the quadratic coefficient is 1404 .
+Lets say we have the congruence: x * 29 = 1404^2 mod 37 * 47 .
+Then x is 92. 92 is divisble by 4, aka:
 23 * 4 * 29 = 1404^2 mod 37 * 47
 
 So we do this not just for prime 29, but for a bunch of others too.. and if 23 is not in our factor base.. we can multiply it by an inverse of a prime in our factor base and hopefully that product does completely factor to our factor base... and that's how it is done. Boom. Give me a few days to write this the best way possible in code and we're there.
