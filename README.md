@@ -17,3 +17,6 @@ Since multiplying by inverses just means we multiply the inverse * remainder + t
 Something like that...
 
 I feel agitated today and depressed. Just restless. I'm so close now and it's like nobody even cares lol. Oh well... just implement this final step and we're done... whatever happens, happens.. I was not given any other choice, this is the only course of action left.
+
+
+Bleh, its not that hard to generate small values... just need focus ... take a squared quadratic coefficient.. factor out the factor base.. whats left we need to multiply that by some inverse so that we get a small value mod N... since any sufficiently small value is almost garantueed to be inside the factor base. Its a very simple problem statement. Just cant think clearly these last few days. 
