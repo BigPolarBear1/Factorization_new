@@ -20,3 +20,5 @@ I feel agitated today and depressed. Just restless. I'm so close now and it's li
 
 
 Bleh, its not that hard to generate small values... just need focus ... take a squared quadratic coefficient.. factor out the factor base.. whats left we need to multiply that by some inverse so that we get a small value mod N... since any sufficiently small value is almost garantueed to be inside the factor base. Its a very simple problem statement. Just cant think clearly these last few days. 
+
+update: Omg, finally, I figured it out. I was massively overcomplicating things. I mean, my way of thinking was right. But there is a much easier pattern to abuse in multiplying by inverses to keep shrinking the number even if its not a clean division. Ergh, give me just a few more days to finish this now. Fucking elementary number theory in retrospect. But never really used discrete logs before so wasn't really familiar with the patterns and number theory.
