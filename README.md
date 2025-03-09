@@ -20,3 +20,5 @@ I feel agitated today and depressed. Just restless. I'm so close now and it's li
 
 
 Bleh, its not that hard to generate small values... just need focus ... take a squared quadratic coefficient.. factor out the factor base.. whats left we need to multiply that by some inverse so that we get a small value mod N... since any sufficiently small value is almost garantueed to be inside the factor base. Its a very simple problem statement. Just cant think clearly these last few days. 
+
+Update: Bleh, I should be ready now to complete the code next week. Its fairly easy to predict which inverses will generate a small number mod N. I see how it works now. There probably is a much more elegant solution.. but this will have to do for now.
