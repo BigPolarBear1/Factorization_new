@@ -34,3 +34,5 @@ Figured it out. I.e if we have an inverse of 13 in mod N, then just calculate in
 Lost my savings in the stock market crash. Cant even go on ski expedition now.. and I urgently need employment... I will move Asia for a job, I'll move anywhere.. I dont care anymore.. I need money and if I'm going to do 0days I need a better setup then here in Europe, bc I cant keep my devices secure here and european law enforcement is telling folks to not do business with me so I got to get out of this place: big_polar_bear1@proton.me
 
 cant live like this anymore and now the last of my savings is gone.. i swear, going to fucking kill myself. What kind of life is this. 
+
+going to cancel therapy bc i cant fucking afford 70 euro for therapy anymore now. it can all go to hell. everything is gone. all my money. nothing left.
