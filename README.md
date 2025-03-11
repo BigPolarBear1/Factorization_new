@@ -36,3 +36,5 @@ Lost my savings in the stock market crash. Cant even go on ski expedition now.. 
 cant live like this anymore and now the last of my savings is gone.. i swear, going to fucking kill myself. What kind of life is this. 
 
 going to cancel therapy bc i cant fucking afford 70 euro for therapy anymore now. it can all go to hell. everything is gone. all my money. nothing left.
+
+If I have mod 15, and N is 4387... since 4387 mod 15 is 7.... we need to find 7*x = 14 mod 15 ... which is 2 ... so 4387 * 2 = 8774 +1 / 15 = 585 ... aka the inverse of 15 in 4387. Since N is multiplied by 2, any value we are dividing by 15 mod N, if its residue mod 15 and then mod 7.5 is a small value.. it tells me that dividing by 15 mod N will also generate a small value. That is the way it can be figured out. The final challenge is.. only knowing this mod 3 and mod 5, can I determine this mod 15 without calculating it for mod 15? Because I only want to check this for prime moduli and not test every combination of primes, which is the real killer... so just need to figure out that, and I have an algorithm to find small values mod N quickly.. and done. Just this fucking depression.
