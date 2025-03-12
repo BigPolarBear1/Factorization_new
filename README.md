@@ -25,3 +25,5 @@ My brain is like a quantum computer, incoherent until it collapses into the righ
 EUREKA! I was right!!!!! I was fucking right! As long as the number of times N is subtracted is a square in the factor base, we end up with a smooth. So when we multiply relations together, ALL we need to do is maintain a square and we are garantueed to have a smooth. I can do this tomorrow. Come  on, final stretch now, final effort to victory. Fuck yea. About to prove everyone wrong haha.
 
 Should be easy now. Fuck man, I was about to kill myself out of desperation. Its always in the darkest moments the solution finally comes. Never give up folks.
+
+I got it. I finally got it. After nearly 2 years. I got it for real now. I can definitely code this within a day. Just solve linear congruence mod primes from the factor base.. and the amount of times N gets subtracted needs to be a square inside the factor base, so using that, we can very easily determine which relations we need to multiply together. Its a simple as that!!!!!!! FUCK. Finally. I don't think I could have endured one more day of this desperation. Just the right time for it to finally come to me.
