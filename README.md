@@ -24,3 +24,5 @@ I guess I could start subtracting 4*N from those coefficients and see where they
 I wonder what the quadratic coefficients for 5*N look like.. is it just the residues of N added to the quadratic coefficients of 4*N? 
 
 I had been misunderstanding my findings this entire time. Maybe not all is lost. Perhaps this new insight will lead to a much better solution.
+
+update: Hmmm... I need to just look at quadratic coefficients mod P, and subtract N mod P from them.. when they get to 0 they form a relation.. and I can use that information to construct smooths. That's how it should be done I believe... god fucking damnit. So fucking mentally exhausted.
