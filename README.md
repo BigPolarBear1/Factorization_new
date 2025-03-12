@@ -12,5 +12,6 @@ Update: OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
 Pentagon guys must be so mad. Imagine losing at 4d chess against some loser highschool dropout from Belgium. 
 
+The guys at the Pentagon right now: https://www.youtube.com/watch?v=CZKecJvD26k
 
 
