@@ -6,13 +6,21 @@ Notes: Just uploaded my latest iterations (5 march 2025). It now uses linear con
 
 Better version will be released soon...
 
-When summing quadratic coefficients, we just need to find sums, which are atleast bigger then N, but as small as possible mod N. That is definitely something I can do by means of heuristic or "weights". Then test if its in the factor base.. and move on. Then we dont need to worry about division mod N. My PoC already works, it generates numbers less then N... and we can keep generating them basically for eternity.. its just zero-ing in on small numbers mod N now.. because there is no point in testing large numbers for smoothness. Depressed. Nothing good is happenning in life. Lost my savings now. People in the west being told not to do business with me. I've been unemployed for over a year, without income.  All because some fuckers pointed a gun at me and shouted insults at me in Redmond. Anyone would become extremely agitated. I had told my manager about the harassment, and when he tried to protest them firing me, they also fired my manager. Just 0 respect for people at Microsoft. Doesn't matter how hard you work. Guess I'm turning 35 this week. Unemployed living with my parents. I'm either going to kill myself, move to China or turn to cyber crime. There isn't any other alternatives. Mostly sad, that the memories of all the friends I had are fading from memory..  I didn't think life would ever become like this again. Rollerblading around the seawall with my teamlead, that was some cool shit.. places and people I'll never see again thanks to microsoft. I dont know what im supposed to do.
+Ergh... now I see how it works. 
+Its actually very simple.
 
-Update: OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOH. So if N is 4387. And the square root of N is +/- 66. Hence any quadratic coefficient which is a 66*x + 1 (or +2, +3, whatever) will result in a small squared coefficient mod N!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Then when summing non-squared partial results together (see paper), we should attempt to have it close to a multiple of 66. Which is EASY! If we just make a selection, see how far we are from a multiple of 66, then we can quickly "shift" the selection to a small one. Or simply assign "weights" to each selection to help guide which ones we should sum together. And as long as the square is larger then N, we will have a small value mod N, and thus, if it divides by the factor base... we WIN. That is how you do it! I got it! I found it! Haha. Tomorrow I'll write the code. Tired tonight. The guys at the pentagon gonna be so mad, haha.
+Get rid of quadratic coefficients. 
 
-Pentagon guys must be so mad. Imagine losing at 4d chess against some loser highschool dropout from Belgium. 
+Just calculate multiples of N. 
+Take the square root and ceil it (like in standard QS).
+From there we can do logarithmic sieving as is standard. 
+After the values start becoming too big, move to the next multiple of N... and repeat.
 
-The guys at the Pentagon right now: https://www.youtube.com/watch?v=CZKecJvD26k
+That's really all there is too it. lol. 
+*sigh* feeling suicidal. 
 
-Back in 2019, my former manager came all the way to Belgium, when I was having a difficult time, and wasn't able to find a job. Not necesairly to hire me, but to just be a friend. At a time when almost the entire industry (aside from a few other people, like the guy from the Belgian military) had forsaken me. And because of this, because of the utter disrespect Microsoft has shown my manager, after he worked there for 27 years (who was also a navy veteran), I do what I do and I am not ever stopping until a price is paid. I am ready to sacrifice everything, to see that a price is paid. Because there is nothing more sacred in this world then the people who believe in you when nobody else does. This is the fatal mistake Microsoft made and it is going to cost them dearly. I do not care anymore. I am at war with Microsoft and I am never stopping.
+The way I calculated those quadratic coefficients, they are just for 4*N. 
+I guess I could start subtracting 4*N from those coefficients and see where they become 0... which means they form a relation. 
+I wonder what the quadratic coefficients for 5*N look like.. is it just the residues of N added to the quadratic coefficients of 4*N? 
 
+I had been misunderstanding my findings this entire time. Maybe not all is lost. Perhaps this new insight will lead to a much better solution.
