@@ -14,4 +14,5 @@ Pentagon guys must be so mad. Imagine losing at 4d chess against some loser high
 
 The guys at the Pentagon right now: https://www.youtube.com/watch?v=CZKecJvD26k
 
+Back in 2019, my former manager came all the way to Belgium, when I was having a difficult time, and wasn't able to find a job. Not necesairly to hire me, but to just be a friend. At a time when almost the entire industry (aside from a few other people, like the guy from the Belgian military) had forsaken me. And because of this, because of the utter disrespect Microsoft has shown my manager, after he worked there for 27 years (who was also a navy veteran), I do what I do and I am not ever stopping until a price is paid. I am ready to sacrifice everything, to see that a price is paid. Because there is nothing more sacred in this world then the people who believe in you when nobody else does. This is the fatal mistake Microsoft made and it is going to cost them dearly. I do not care anymore. I am at war with Microsoft and I am never stopping.
 
