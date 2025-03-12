@@ -28,3 +28,5 @@ I had been misunderstanding my findings this entire time. Maybe not all is lost.
 update: Hmmm... I need to just look at quadratic coefficients mod P, and subtract N mod P from them.. when they get to 0 they form a relation.. and I can use that information to construct smooths. That's how it should be done I believe... god fucking damnit. So fucking mentally exhausted.
 
 I.e if a quadratic coefficient mod 11 is 5, then the squared one is 5^2 mod 11, 5^2 - 4*4387 = 0 mod 11. So I know there is a relation there with 4N inbetween. I got to start generalizing this ...  I just need to find multiple relations like this... then multiply them together .... i cant think clearly in this place with all the stress going on. 
+
+Wasted atleast 2 weeks going down wrong rabbit holes when the real answer was infront of me all along... I tried to mimic traditional QS... while in reality I had to zero in on finding relations in quadratic coefficients mod P in isolation.. there's no point in pivoting my findings into normal QS.. that is conveluted and nullifies any of its strengths... ergh. FUCK. AND FUCK MICROSOFT. 
