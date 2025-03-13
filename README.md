@@ -38,3 +38,5 @@ And it doesn't really matter how we calculate quadratic coefficients. Right now 
 
 
 Ok I have worked out the details in my head. Calculate all the quadratic coefficients for every prime in my factor base. Calculate how much N needs to be subtracted to reach 0 for each squared coefficient. Now with that.... take all those with 1N difference, multiply permutations of those together such that the squared coefficient - 1N is near 0. Those are basically garantueed to be in the factor base. Not enough smooths? No problem, now repeat for 2N... and so on. Thats the best I can do for now. Publish that, fix that paper too.. and take a break for a few months from math until I'm in a better place to resume it again.
+
+Great, my belgian bank ended their relationship with me and is closing my accounts. Getting treated like a criminal by everyome. And I havnt even done crime. But maybe its a wake up call to finally get out of europe and head to Asia..
