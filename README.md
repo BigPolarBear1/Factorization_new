@@ -18,3 +18,5 @@ Before summer I will permanently depart Europe. I make this vow. I'm not staying
 I'm not afraid of western intel. I'll fight all these fucking spooks. Stay the fuck away from me bunch of fucking no skill losers.
 
 ps: My algorithm works beautifully now. It is exactly what I wanted to do. It literally finds smooths faster then anything else out there. Go to hell. Go to hell for everything.
+
+I tried to do the right thing. I really tried. Got threatened with a gun, got harassed, went after my manager too and fired him, ruined my life, seperated me from my friends, ended up back in Europe, where nothing happens and law enforcement is telling people they will sanction them if they do business with me... even closed my fucking bank account for whatever reason. You are forcing an outcome which fits your narrative by literally giving me no other choice. I finished a first rough draft tonight. It works. So either tomorrow or this weekend, it will appear here on this github page. 
