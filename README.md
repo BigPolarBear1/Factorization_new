@@ -21,3 +21,6 @@ Omg, my head is all over the place these last 2 weeks. Getting ideas, finding ou
 
 Update: You know, I just had this insight. If we calculate a lot of quadratic coefficients for a lot of primes. Which is fast. And then just calculate how much N needs to be subtracted for each squared coefficient to reach 0... and just find enough small values that are the same.. and multiply those so the coefficients squared are atleast one time bigger then N... that should work incredibly well. 
 I'll write it tomorrow... if it doesn't work.. its game over. I cant stand this life anymore. I'm ready for it to end now.
+
+Maybe I don't even need to figure out how often to subtract N to reach 0. 
+I.e if 5^2 mod 13 is one squared coefficient... and 5^2 - 4*4387 = 1 mod 13 ... as long as I can find enough such "relations" with 4 inbetween.. it doesn't really matter if one of them has a 0 coefficient or not..  even these other coefficients.. it will still give me the information I need. It just means its a multiple with an offset. Hmm..... I guess... that was my critical mistake these last two weeks trying to get this to work. I limited myself too much by hyperfocusing on getting to a 0 coefficient. It doesn't even matter. 
