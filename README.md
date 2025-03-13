@@ -16,3 +16,5 @@ Europeans are massive hypocrites. Everyone saying how they need to increase defe
 
 Before summer I will permanently depart Europe. I make this vow. I'm not staying here. No fucking way. I rather go to China or some place, where people actually respect me for my work.
 I'm not afraid of western intel. I'll fight all these fucking spooks. Stay the fuck away from me bunch of fucking no skill losers.
+
+ps: My algorithm works beautifully now. It is exactly what I wanted to do. It literally finds smooths faster then anything else out there. Go to hell. Go to hell for everything.
