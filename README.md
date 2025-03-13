@@ -10,8 +10,10 @@ Update:
 
 To do:
 
-Step 1. For each squared quadratic coefficient in mod p calculate how much N needs to be subtracted to reach 0.
+Step 1. For each squared quadratic coefficient in mod p calculate how much N needs to be subtracted to reach 0. 
 Step 2. Multiply coefficients in different prime moduli together... such that the total amount of N being subtracted results in a small number. Hence, it being garantueed to be divisble by the primes that are multiplied, whatever factors remain will be small. 
+
+The good thing is that the amount of times N gets subtract, as we multiply those coefficients mod p together.. it can only go up, it doesn't wrap around modulo m.. so that does make it a lot more straight forward. So we just need to look at the rate of the coefficient squared vs the amount of times N gets subtracted... that should do it.. unless I'm just wrong again and overlooking something. I don't seem to be very sharp mentally lately.
 
 I think this is the only way to do it quickly. 
 
