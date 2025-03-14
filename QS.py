@@ -1,6 +1,15 @@
+###Author: Essbee Vanhoutte
+###Modified existing QS code to use quadratic coefficients instead
+###Note: This is still a work in progress. In try_sm a bunch more needs to be optimized. 
+###Ideally we want to find smooths as fast as possible with a factor_base as small as possible
+###Increase the "base" parameters to use a bigger factor base may also need to increase sieve_interval if not enough smooths are found
+###I also need to clean up some artifacts from previous iterations still.. will do in the coming days..
+###Code that I used as a template:
+
 from math import fabs, ceil, sqrt, exp, log, log2
 import random
 from itertools import chain
+from itertools import combinations
 import sympy
 from bisect import bisect_left
 import itertools
@@ -10,13 +19,13 @@ import multiprocessing
 import time
 import copy
 from timeit import default_timer
+import math
 key=0                 #Define a custom modulus to factor
 keysize=12            #Generate a random modulus of specified bit length
-workers=8           #max amount of parallel processes to use
-sieve_interval=100 #Amount of congruences to solve for each quadratic coefficient
-g_min_fac=10 #Amount of factors used in linear congruence.. to do: I need to research selection of these to keep result of the congruence as low as possible
-base=6 #Increase to generate more quadratic coefficients
-second_base=500 #factor base, at size 2000 gauss elim will take about a minute.
+workers=12         #max amount of parallel processes to use
+sieve_interval=100000
+base=500 #Factor base
+
 
 
 g_enable_custom_factors=0
@@ -118,8 +127,8 @@ def gcd(a,b): # Euclid's algorithm
 
 def solve_lin_con(a,b,m):
     ##ax=b mod m
-    #g=gcd(a,m)
-    #a,b,m = a//g,b//g,m//g
+    g=gcd(a,m)
+    a,b,m = a//g,b//g,m//g
     return pow(a,-1,m)*b%m  
 
 def isqrt(n): # Newton's method, returns exact int for large squares
@@ -294,23 +303,26 @@ def solve_row(sol_rows,M,marks,K=0):
     solution_vec.append(sol_rows[K][1]) 
     return(solution_vec)
     
-def solve(solution_vec,smooth_nums,N,xlist):
+def solve(solution_vec,smooth_nums,N,xlist,factor_list):
     solution_nums = [smooth_nums[i] for i in solution_vec]
     x_nums = [xlist[i] for i in solution_vec]
-    Asquare = 1
-    for n in solution_nums:
-        Asquare *= n
-
+    fac = [factor_list[i] for i in solution_vec]
     b=1
     for n in x_nums:
         b *= n
-    a = isqrt(Asquare)
-    #if a**2 != Asquare:
-      #  print("ERROR")
-      #  time.sleep(10000)
-   # if Asquare%N != (b**2)%N:
-     #   print("ERROR222222222222")
-    #    time.sleep(100000)     
+    allfac=[]
+    for fa in fac:
+        allfac.extend(fa)
+    allfac.sort()
+    c=len(allfac)-1
+    while c > -1:
+        allfac.pop(c)
+        c-=2
+    af=1
+    for fac in allfac:
+        if fac != -1:
+            af*=fac    
+    a=af    
     print(str(a)+"^2 = "+str(b)+"^2 mod "+str(N))
     if b > a:
         temp=a
@@ -318,7 +330,6 @@ def solve(solution_vec,smooth_nums,N,xlist):
         b=temp
     factor = gcd(a-b,N)
     return factor
-
 
 def create_partial_results(sols):
     new=[]
@@ -357,123 +368,151 @@ def factor(n, factor_base): # trial division from factor base
     else:
         return None    
 
-def find_smooths(sol,n,factor_list):
+def try_sm(sim,x,n,primeslist2):
+    ##To do: Optimize this so we generate smaller numbers even, and more of them
+    sim1=normalize_sols(n,sim)
+    mod=sim1[1]
+    sim1=sim1[0]
     smooths=[]
+    x_lists=[]
     factors=[]
-    x_list=[]
     i=0
-    lmod=1
-    solsq=sol**2
-    check_ceil=n
-    min_fac=g_min_fac
     enum=[]
-    while i < min_fac:
-        enum.append(factor_list)
-        i+=1
-    i=0
-    while i < sieve_interval:
-        for md in itertools.product(*enum):
-            if i > sieve_interval-1:
-                i+=1
-                break
-            lmod=1
+    mod1=1
+    limit=x*n
+    while i < len(sim1):
+        if mod1**2 > limit:
+            break
+        mod1*=sim1[i]
+        enum.append(sim1[i+1])
+        i+=2
+    if mod1**2 < limit:
+        return smooths,x_lists, factors
+    b=0
+    first=0
 
-            for nm in md:
-                lmod*=nm 
-            #print(lmod)    
-            try: ### this way we can remove gcd() from solve_lin_con, but need to handle errors... error indicates factor of N is found.. should add that later.
-                ret=solve_lin_con(lmod,solsq%n,n)
-            except Exception:
-                print("error in solve_lin_con.. found a factor TO DO: implement code")
-                i+=1
-                continue
-            if ret == 0 or ret > check_ceil:
-                i+=1
-                continue
-            f=factor(ret,factor_list)
-            if f != None:
-                smooth=ret*lmod
-                if smooth not in smooths and smooth != solsq:
-                    for nm in md:
-                        f.append(nm)
-                    smooths.append(smooth)
-                    factors.append(f)
-                    x_list.append(sol)
-            i+=1
-        enum.append(factor_list)     
-   
-    return smooths,factors,x_list
+    while b < 1000000:
+        for comb in itertools.product(*enum):
+            to=0
+            for l in comb:
+                to+=l
+            to = to%mod1
+            tot=to**2 
+            if tot < n:
+                continue 
+            smooth_can=tot-(x*n) 
+            v=0
+            faclist=[]
+            if smooth_can < 0:
+                faclist.append(-1)
+            while v < len(primeslist2):
+                while smooth_can % primeslist2[v] ==0:
+                    smooth_can//=primeslist2[v]
+                    faclist.append(primeslist2[v])
+                v+=1
+            if smooth_can == -1 or smooth_can == 1:
+                smooths.append(tot-(x*n))
+                x_lists.append(to)  
+                factors.append(faclist)
+        if i > len(sim1)-1:
+            break         
+        enum.append(sim1[i+1])
+        mod1*=sim1[i]
+        while (mod1//sim1[first])**2 > limit:
+            mod1//=sim1[first]
+            enum.pop(0)
+            first+=2
+        i+=2    
+        b+=1         
 
-def gen_smooths(sol,mod,factor_list,n,mod2):
-    smooth_nums=[]
-    x_list=[]
-    factors=[]
-    smooth_nums,factors,x_list=find_smooths(sol,n,factor_list)
-    return smooth_nums, x_list, factors
+    return smooths,x_lists, factors
 
-def generate_smooths(procnum,return_dict,n,enum,flist,mod,primeslist2):
-    sm=[]
-    xlist=[]
-    flist=[]
-    mod2=1
+def find_sm(start,end,csl,lists2,n,primeslist2,procnum,return_dict):
     test=[[],[],[]]
-    for p in primeslist2:
-        mod2*=p
-    for comb in itertools.product(*enum):
-        sols=0
-        for l in comb:  
-            sols+=l
-            del l
-        del comb
-        factor_list=primeslist2
-        sols=sols%mod
-        smooth_nums, x_list, factors=gen_smooths(sols,mod,factor_list,n,mod2)
-        c=0
-        while c < len(smooth_nums):
-            if smooth_nums[c] not in sm:
-                sm.append(smooth_nums[c])
-                xlist.append(x_list[c])
-                flist.append(factors[c])
-            c+=1      
-        test[0]=sm
-        test[1]=xlist
-        test[2]=flist
-        return_dict[procnum]=test
-    return 0         
+    i=start
+    lists=copy.deepcopy(lists2)
+    sm=[]
+    xl=[]
+    fac=[]
+    while i < end:
+        sim=[]
+        j=0
+        while j < len(csl):
+            try:
+                s=csl[j][str(i%lists[j*2])]
+                sim.extend([lists[j*2],s])
+            except Exception as e:
+                j+=1
+                continue
+            j+=1
+        if len(sim) > 2:
+            smooths,x_lists,factors=try_sm(sim,i,n,primeslist2)  
+            l=0
+            while l < len(smooths):
+                if smooths[l] not in sm:
+                    sm.append(smooths[l])
+                    xl.append(x_lists[l])
+                    fac.append(factors[l])
+                l+=1      
+            if len(smooths)!=0:
+                test[0]=sm
+                test[1]=xl
+                test[2]=fac
+                return_dict[procnum]=test
+            if len(sm)>base:
+                break
+        i+=1
+
+    return sm, xl, fac  
+
+def generate_smooths(lists,procnum,return_dict,n,primeslist2,csl,start,end):
+    sm,xl,fac=find_sm(start,end,csl,lists,n,primeslist2,procnum,return_dict)
+    return 0       
 
 def launch(lists,n,primeslist2):
+    lists=lists[0]
     sr=round(n**0.5)
     allsols,allbigsums=[],[]
     bigsums,bigmodulus=[],[]
     i=0
-    while i < len(lists):
-        sums,modulus=normalize_sols(n,lists[i])  
-        bigsums.append(sums)
-        bigmodulus.append(modulus)
-        i+=1
+
     enum=[]
     i=0
     factor_list=[]
     cores=1
     j=0
-    while j < len(bigsums):
-        i=0
-        enum.append([])
-        factor_list.append([])
-        while i < len(bigsums[j]):
-            enum[-1].append(bigsums[j][i+1])
-            factor_list[-1].append(bigsums[j][i])
-            i+=2
-        j+=1    
+    pmods=[]
+
 
     manager=multiprocessing.Manager()
     return_dict=manager.dict()
     jobs=[]
     procnum=0
     print("[*]Launching attack")
+
+    csl=[]
+    i=0
+    while i < len(lists):
+        j=0
+        csl.append({})
+        while j < len(lists[i+1]):
+            s=solve_lin_con(n,lists[i+1][j]**2,lists[i])
+            try:
+                c=csl[i//2][str(s)]
+                c.append(lists[i+1][j])
+            except Exception as e:
+                c=csl[i//2][str(s)]=[lists[i+1][j]]
+
+            j+=1
+        i+=2   
+    part=sieve_interval//workers
+    rstart=1
+    rstop=part
     z=0
-    while z < len(bigsums):
-        p=multiprocessing.Process(target=generate_smooths, args=(procnum,return_dict,n,enum[z],factor_list[z],bigmodulus[z],primeslist2))
+    while z < workers:
+        p=multiprocessing.Process(target=generate_smooths, args=(lists,procnum,return_dict,n,primeslist2,csl,rstart,rstop))
+        rstart+=part  
+        rstop+=part  
         jobs.append(p)
         p.start()
         procnum+=1
@@ -483,6 +522,10 @@ def launch(lists,n,primeslist2):
         proc.join(timeout=0)        
     lastlen=0
     start=default_timer()
+    fsm=[]
+    fxlist=[]
+    flist=[]
+    seen=[]
     while 1:
         time.sleep(1)
         z=0
@@ -493,26 +536,24 @@ def launch(lists,n,primeslist2):
             z+=1
         check=return_dict.values()
         tlen=0
+
         for item in check:
-            tlen+=len(item[0])
+            a=0
+            while a < len(item[0]):
+                if item[0][a]%n not in seen:
+                    seen.append(item[0][a]%n)
+                    fsm.append(item[0][a])
+                    fxlist.append(item[1][a])
+                    flist.append(item[2][a])
+                a+=1
+        tlen=len(fsm)
         if tlen > lastlen:
-            print("[i]Smooths found: "+str(tlen)+"/"+str(second_base))
+            print("[i]Smooths found: "+str(tlen)+"/"+str(base))
             lastlen=tlen
-        if balive == 0 or tlen > second_base:
+        if balive == 0 or tlen > base:
             for proc in jobs:
                 proc.terminate()
-            fres=check
-            i=0
-            fsm=[]
-            fxlist=[]
-            flist=[]
-            while i < len(fres):
-                fsm.extend(fres[i][0])
-                fxlist.extend(fres[i][1])
-                flist.extend(fres[i][2])
-                i+=1
             duration = default_timer() - start
-                        
             print("[i]Smooth finding took: "+str(duration)+" (seconds)")     
             QS(n,primeslist2,fsm,fxlist,flist)
             print("[i]All procs exited")
@@ -523,6 +564,7 @@ def equation(y,x,n,mod):
     rem=(x**2)+y*-x+n
     rem2=rem%mod
     return rem2,rem  
+
 def make_vector(n_factors,factor_base): 
     '''turns factorization into an exponent vector mod 2'''
     
@@ -532,24 +574,18 @@ def make_vector(n_factors,factor_base):
         if factor_base[j] in n_factors:
             exp_vector[j] = (exp_vector[j] + n_factors.count(factor_base[j])) % 2
     return exp_vector
-def QS(n,factor_list,sm,xlist,flist):
 
-    if len(sm) < len(factor_list):
+def QS(n,factor_list,sm,xlist,flist):
+    if len(sm) < base:
         print("[i]Not enough smooth numbers found")
         return 0
 
-    if len(sm)-100 > len(factor_list): #reduce for smaller matrix
+    if len(sm) > len(factor_list)+len(factor_list)//2: #reduce for smaller matrix
         print('[*]trimming smooth relations...')
-        del sm[len(factor_list):]
-        del xlist[len(factor_list):]
-        del flist[len(factor_list):]  
-
-
-    #print("sm: ",sm)
-    #print("xlist: ",xlist)
-    #print("flist: ",flist)
-    #print("factor_list: ",factor_list)
-    #print("n: ",n)        
+        del sm[len(factor_list)+len(factor_list)//2:]
+        del xlist[len(factor_list)+len(factor_list)//2:]
+        del flist[len(factor_list)+len(factor_list)//2:]  
+      
     is_square, t_matrix = is_square, t_matrix = build_matrix(factor_list, sm, flist)#build_matrix(sm,factor_list)
     print("[*]Starting Gaussian elimination")
     start=default_timer()
@@ -562,21 +598,22 @@ def QS(n,factor_list,sm,xlist,flist):
     solution_vec = solve_row(sol_rows,M,marks,0)
     print("[*]Checking solutions")
     start=default_timer()
-    factor = solve(solution_vec,sm,n,xlist) 
+    factor = solve(solution_vec,sm,n,xlist,flist) 
 
     for K in range(1,len(sol_rows)):
         if (factor == 1 or factor == n):
             solution_vec = solve_row(sol_rows,M,marks,K)
-            factor = solve(solution_vec,sm,n,xlist)
+            factor = solve(solution_vec,sm,n,xlist,flist)
         else:
             print("[i]Found factors of: "+str(n))
             print("P: ",factor)
             print("Q: ",n//factor)
             duration = default_timer() - start
                         
-            print("[i]Found factors in: "+str(duration)+" (seconds)") 
+            print("[i]Checking solutions took: "+str(duration)+" (seconds)") 
             return factor, n/factor     
     return 0
+
 def legendre(a, p):
     return pow_mod(a,(p-1)//2,p) 
 
@@ -690,6 +727,7 @@ def main():
     global key
     global base
     global workers
+    start = default_timer() 
     if g_p !=0 and g_q !=0 and g_enable_custom_factors == 1:
         p=g_p
         q=g_q
@@ -711,22 +749,19 @@ def main():
     primeslist2=[]
 
     print("[i]Modulus length: ",bitlen(n))
-    primeslist.extend(get_primes(2,10000000))
+    primeslist.extend(get_primes(2,1000000))
     sbaseprimes=[]
     i=0
-    while i < base*workers:
+    while i < base:
         primeslist1.append(primeslist[0])
         i+=1
         primeslist.pop(0)    
     i=0
-    sbaseprimes.extend(get_primes(2,10000000))
-    while i < second_base:
-        primeslist2.append(sbaseprimes[0]) 
-        i+=1 
-        sbaseprimes.pop(0)
+    primeslist2=copy.deepcopy(primeslist1)
         
     init(n,primeslist1,primeslist2)
-
+    duration = default_timer() - start
+    print("Factorization in total took: "+str(duration))
 
 
 def print_banner():
