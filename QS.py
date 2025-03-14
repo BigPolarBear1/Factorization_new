@@ -22,7 +22,7 @@ from timeit import default_timer
 import math
 key=0                 #Define a custom modulus to factor
 keysize=12            #Generate a random modulus of specified bit length
-workers=12         #max amount of parallel processes to use
+workers=8         #max amount of parallel processes to use
 sieve_interval=100000
 base=500 #Factor base
 
