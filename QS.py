@@ -24,8 +24,8 @@ key=0                 #Define a custom modulus to factor
 keysize=12            #Generate a random modulus of specified bit length
 workers=8         #max amount of parallel processes to use
 sieve_interval=100000
-base=500 #Factor base
-
+base=1000 #Factor base
+check_threshold=1
 
 
 g_enable_custom_factors=0
@@ -380,27 +380,44 @@ def try_sm(sim,x,n,primeslist2):
     enum=[]
     mod1=1
     limit=x*n
+    sqlimit=math.ceil(limit**0.5)
+    sq=math.ceil(n**0.5)
+   # sqlimit-=sq*20
     while i < len(sim1):
         if mod1**2 > limit:
             break
         mod1*=sim1[i]
         enum.append(sim1[i+1])
+        enum[-1].sort()
         i+=2
     if mod1**2 < limit:
         return smooths,x_lists, factors
     b=0
     first=0
-
+    #print("next")
     while b < 1000000:
+        seen=[]
         for comb in itertools.product(*enum):
+            h=0
             to=0
-            for l in comb:
-                to+=l
+            while h < len(comb):
+
+                to+=comb[h]
+                h+=1
+
             to = to%mod1
+            #To do: If too large, try submodulus combinations
+            if to//sqlimit > check_threshold:
+                continue
             tot=to**2 
-            if tot < n:
-                continue 
+           # if tot < n:
+               # continue 
             smooth_can=tot-(x*n) 
+            if smooth_can in seen:
+                continue
+                
+            seen.append(smooth_can)    
+           # print("smooth_can: "+str(smooth_can)+" "+str(smooth_can//n)+" "+str(to)+" "+str(sqlimit)+" "+str(tes))
             v=0
             faclist=[]
             if smooth_can < 0:
@@ -424,10 +441,12 @@ def try_sm(sim,x,n,primeslist2):
             first+=2
         i+=2    
         b+=1         
-
+   # time.sleep(10000)
     return smooths,x_lists, factors
 
 def find_sm(start,end,csl,lists2,n,primeslist2,procnum,return_dict):
+   # print("list2: ",len(lists2))
+   # print("primeslist2: ",len(primeslist2))
     test=[[],[],[]]
     i=start
     lists=copy.deepcopy(lists2)
@@ -462,7 +481,7 @@ def find_sm(start,end,csl,lists2,n,primeslist2,procnum,return_dict):
             if len(sm)>base:
                 break
         i+=1
-
+   # print("end",end)
     return sm, xl, fac  
 
 def generate_smooths(lists,procnum,return_dict,n,primeslist2,csl,start,end):
@@ -680,7 +699,7 @@ def build_sols_list(prime1,n,test1,mod1):
     lift=2
     liftlim=1
     if prime1==2:
-        liftlim=6
+        liftlim=2
     elif prime1==3:
         liftlim=1
     elif prime1 < 1:
@@ -708,14 +727,14 @@ def init(n,primeslist1,primeslist2):
     lists=[]
     mods=[]
     i=0
-    while i < workers:
+    while i < 1:
         lists.append([])
         mods.append(1)
         i+=1
     i=0
     while i < len(primeslist1):
         prime1=primeslist1[i]
-        lists[i%workers],mods[i%workers]=build_sols_list(prime1,n,lists[i%workers],mods[i%workers])
+        lists[i%1],mods[i%1]=build_sols_list(prime1,n,lists[i%1],mods[i%1])
         i+=1          
     launch(lists,n,primeslist2)
     return 
@@ -735,6 +754,11 @@ def main():
     if key == 0:
         print("\n[*]Generating rsa key with a modulus of +/- size "+str(keysize)+" bits")
         publicKey, privateKey,phi,p,q = generateKey(keysize//2)
+       # p=661
+       # q=709
+     #   p=824604972197
+     #   q=842701599533
+
         n=p*q
         key=n
     else:
