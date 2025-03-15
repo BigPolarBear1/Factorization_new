@@ -20,3 +20,5 @@ You know. With everything that has happened. Getting threatened with gun, gettin
 I don't get it. It all start when I started finding all these bugs in TLS protocols and whatnot... like someone actively trying to ruin my life. I wouldn't be suprised if there's some jealous shithead intel folks doing this. All these people are jealous bc they are no skill losers. Yea, fuck you all.
 
 Going to quit therapy. I have 5k EUR left, half of that is frozen by my bank, which is also closing my account. Cant afford it. Finish this math, and prepare to depart Europe to go and find a way to make a living elsewhere. Not going to die here in Europe like this. 
+
+Just really starting to despise this world and people. I made so much sacrifices, and I have nothing, broke, living with my parents at age 35. All my friends half a world away thanks to msft. Just fundamentally beginning to change me. Especially the pain of having had to leave behind my friends. That more then anything. I can do cybercrime now, might aswell become the person everyone wants me to be.
