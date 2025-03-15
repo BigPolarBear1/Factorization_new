@@ -1,10 +1,12 @@
 !!!Work in progress!!!!
 
-Uploaded a new version (14 march):
+Uploaded a new version (15 march):
 
-Will factor 100 bit moduli in about 10 seconds.
+Will factor 150 bit in a couple of minutes on a laptop.
+Still trying to figure out how to fix the code in try_sm, right now it will ignore numbers that are too big. 
+But I believe I have an idea how to resolve that. I'll upload a better version soon. #roadto200bit
 
-Use: python3 QS.py -keysize 100
+Use: python3 QS.py -keysize 150
 
 Increase base (and potentially sieve_interval) for higher bits when smooth finding gets too slow. I will improve the smooth finding code soon.
 
