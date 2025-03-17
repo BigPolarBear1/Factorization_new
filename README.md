@@ -16,3 +16,5 @@ One important thing I will definitely do next is deeply study the GNFS algo, bec
 It's only a matter of time until I truely start breaking barriers with my research.. I started at the most granular/basic level and worked my way up, all of this has given me a very intuitive feel for the problem, even if it took me 2 years (I started with pre-highschool math knowledge), I know I can succeed eventually. I already know that for the remainder of my life, I am going to keep grinding this problem, I am not ever quitting this.. this is something I need to solve, no matter the personal cost.
 
 Anyway, will upload a version that can get above 200 bit on a laptop later this week.
+
+Update: Hmm, just quickly reading through a GNFS paper... it does have a much more elaborate way of finding smooths... I should check if there is some way I can integrate that into my PoC somehow. 
