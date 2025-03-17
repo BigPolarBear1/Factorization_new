@@ -10,11 +10,4 @@ Use: python3 QS.py -keysize 150
 
 Much better version will be published in the coming days.
 
-Little bit depressed that I will have to delegate my math to my spare time again, as I've ran out of savings and need to find a way to leave Europe now.
-I definitely still see a way forward with my research. I know where the bottlenecks are, and I have plenty of ideas now to explore.
-One important thing I will definitely do next is deeply study the GNFS algo, because QS is now easy to understand for me... but now I want to learn number field sieve, and see if there is any inspiration there.
-It's only a matter of time until I truely start breaking barriers with my research.. I started at the most granular/basic level and worked my way up, all of this has given me a very intuitive feel for the problem, even if it took me 2 years (I started with pre-highschool math knowledge), I know I can succeed eventually. I already know that for the remainder of my life, I am going to keep grinding this problem, I am not ever quitting this.. this is something I need to solve, no matter the personal cost.
-
-Anyway, will upload a version that can get above 200 bit on a laptop later this week.
-
-Update: Hmm, just quickly reading through a GNFS paper... it does have a much more elaborate way of finding smooths... I should check if there is some way I can integrate that into my PoC somehow. 
+TO DO: I will upload a newer version tomorrow. It will factor 200-bit on a laptop. I just really quickly skimmed through a paper on GNFS, it has a much better smooth finding method.. so if this beats standard QS... and I implement GNFS's way of smooth finding, will it beat standard GNFS too? Now THAT would be something... I'm so fucking broke, but my intuition is telling me there is something here.. hence I must push on. Always trust your intuition.. the universe works in mysterious ways. 
