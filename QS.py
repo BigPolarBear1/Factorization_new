@@ -1,9 +1,8 @@
 ###Author: Essbee Vanhoutte
+###
 ###Modified existing QS code to use quadratic coefficients instead
-###Note: This is still a work in progress. In try_sm a bunch more needs to be optimized. 
-###Ideally we want to find smooths as fast as possible with a factor_base as small as possible
-###Increase the "base" parameters to use a bigger factor base may also need to increase sieve_interval if not enough smooths are found
-###I also need to clean up some artifacts from previous iterations still.. will do in the coming days..
+###Note: After further research, I came to the conclusion, it would be much better to use quadratic coefficient as algebraic factor base and use a similar approach as number field sieve.
+###Will upload a version doing this soon. 
 ###Code that I used as a template:
 
 from math import fabs, ceil, sqrt, exp, log, log2
@@ -23,8 +22,8 @@ import math
 key=0                 #Define a custom modulus to factor
 keysize=12            #Generate a random modulus of specified bit length
 workers=8         #max amount of parallel processes to use
-sieve_interval=100000
-base=1000 #Factor base
+sieve_interval=1000000
+base=2000 #Factor base
 check_threshold=1
 
 
@@ -357,8 +356,6 @@ def create_partial_results(sols):
 def factor(n, factor_base): # trial division from factor base
     factors = []
     for p in factor_base:
-        if n == 0:
-            print("shouldn't happen")
         while n % p == 0:
             factors.append(p)
             n //= p
@@ -369,7 +366,6 @@ def factor(n, factor_base): # trial division from factor base
         return None    
 
 def try_sm(sim,x,n,primeslist2):
-    ##To do: Optimize this so we generate smaller numbers even, and more of them
     sim1=normalize_sols(n,sim)
     mod=sim1[1]
     sim1=sim1[0]
@@ -379,74 +375,76 @@ def try_sm(sim,x,n,primeslist2):
     i=0
     enum=[]
     mod1=1
-    limit=x*n
+    limit=(x)*n
     sqlimit=math.ceil(limit**0.5)
     sq=math.ceil(n**0.5)
-   # sqlimit-=sq*20
+    mod_list=[]
     while i < len(sim1):
-        if mod1**2 > limit:
-            break
+        mod_list.append(sim1[i])
         mod1*=sim1[i]
         enum.append(sim1[i+1])
-        enum[-1].sort()
         i+=2
-    if mod1**2 < limit:
-        return smooths,x_lists, factors
-    b=0
-    first=0
-    #print("next")
-    while b < 1000000:
-        seen=[]
-        for comb in itertools.product(*enum):
-            h=0
-            to=0
-            while h < len(comb):
 
-                to+=comb[h]
-                h+=1
+    smoothss=[]
+    chk=sqlimit//10
+   
+    for comb in itertools.product(*enum):
+        h=0
+        to=0
+        comb_l=len(comb)
+        while h < comb_l:
 
-            to = to%mod1
-            #To do: If too large, try submodulus combinations
-            if to//sqlimit > check_threshold:
-                continue
-            tot=to**2 
-           # if tot < n:
-               # continue 
-            smooth_can=tot-(x*n) 
-            if smooth_can in seen:
-                continue
-                
-            seen.append(smooth_can)    
-           # print("smooth_can: "+str(smooth_can)+" "+str(smooth_can//n)+" "+str(to)+" "+str(sqlimit)+" "+str(tes))
-            v=0
-            faclist=[]
-            if smooth_can < 0:
-                faclist.append(-1)
-            while v < len(primeslist2):
-                while smooth_can % primeslist2[v] ==0:
-                    smooth_can//=primeslist2[v]
-                    faclist.append(primeslist2[v])
-                v+=1
-            if smooth_can == -1 or smooth_can == 1:
-                smooths.append(tot-(x*n))
-                x_lists.append(to)  
-                factors.append(faclist)
-        if i > len(sim1)-1:
-            break         
-        enum.append(sim1[i+1])
-        mod1*=sim1[i]
-        while (mod1//sim1[first])**2 > limit:
-            mod1//=sim1[first]
-            enum.pop(0)
-            first+=2
-        i+=2    
-        b+=1         
-   # time.sleep(10000)
+            to+=comb[h]
+            h+=1
+
+        to = to%mod1
+        ch=to-sqlimit
+        if abs(ch) > chk:
+            test_val=abs(to//sqlimit)
+
+            divider=-1
+            for item in mod_list:
+                if test_val >= item:
+                    divider=item    
+                else:
+                    del item
+                    break   
+                del item     
+            if divider != -1:
+                to=to%(mod1//divider) 
+            if abs(ch) > chk:     
+                del comb
+                continue   
+   
+        smoothss.append(to)
+        del comb              
+   
+    i=0
+    smoothss.sort()
+    ind=bisect_left(smoothss,sqlimit)
+    
+    while i < len(smoothss):
+        to=smoothss[i]
+        tot=to**2 
+        smooth_can=tot-(x*n)    
+        v=0
+        faclist=[]
+        if smooth_can < 0:
+            faclist.append(-1)
+        while v < len(primeslist2):
+            while smooth_can % primeslist2[v] ==0:
+                smooth_can//=primeslist2[v]
+                faclist.append(primeslist2[v])
+            v+=1
+        if smooth_can == -1 or smooth_can == 1:
+            smooths.append(tot-(x*n))
+            x_lists.append(to)  
+            factors.append(faclist)
+                 
+        i+=1                     
     return smooths,x_lists, factors
 
 def find_sm(start,end,csl,lists2,n,primeslist2,procnum,return_dict):
-   # print("list2: ",len(lists2))
-   # print("primeslist2: ",len(primeslist2))
     test=[[],[],[]]
     i=start
     lists=copy.deepcopy(lists2)
@@ -456,19 +454,38 @@ def find_sm(start,end,csl,lists2,n,primeslist2,procnum,return_dict):
     while i < end:
         sim=[]
         j=0
+        mod1=1
+        limit=(i)*n
+        sqlimit=math.ceil(limit**0.5)
+        found=0
         while j < len(csl):
             try:
                 s=csl[j][str(i%lists[j*2])]
                 sim.extend([lists[j*2],s])
+                mod1*=lists[j*2]
+                if mod1 > sqlimit:
+                    found=1
+                    break
             except Exception as e:
                 j+=1
                 continue
             j+=1
+        if found == 0:
+            i+=1
+            continue
         if len(sim) > 2:
             smooths,x_lists,factors=try_sm(sim,i,n,primeslist2)  
             l=0
             while l < len(smooths):
-                if smooths[l] not in sm:
+                q1=0
+                found=0
+                while q1 < len(sm):
+                    if smooths[l]%n == sm[q1]%n:
+                        found=1
+
+                    q1+=1
+                
+                if found ==0:
                     sm.append(smooths[l])
                     xl.append(x_lists[l])
                     fac.append(factors[l])
@@ -481,34 +498,14 @@ def find_sm(start,end,csl,lists2,n,primeslist2,procnum,return_dict):
             if len(sm)>base:
                 break
         i+=1
-   # print("end",end)
     return sm, xl, fac  
 
-def generate_smooths(lists,procnum,return_dict,n,primeslist2,csl,start,end):
-    sm,xl,fac=find_sm(start,end,csl,lists,n,primeslist2,procnum,return_dict)
-    return 0       
-
 def launch(lists,n,primeslist2):
-    lists=lists[0]
-    sr=round(n**0.5)
-    allsols,allbigsums=[],[]
-    bigsums,bigmodulus=[],[]
-    i=0
-
-    enum=[]
-    i=0
-    factor_list=[]
-    cores=1
-    j=0
-    pmods=[]
-
-
     manager=multiprocessing.Manager()
     return_dict=manager.dict()
     jobs=[]
     procnum=0
-    print("[*]Launching attack")
-
+    print("[*]Creating xN hashmap.. please wait..")
     csl=[]
     i=0
     while i < len(lists):
@@ -523,13 +520,14 @@ def launch(lists,n,primeslist2):
                 c=csl[i//2][str(s)]=[lists[i+1][j]]
 
             j+=1
-        i+=2   
+        i+=2      
     part=sieve_interval//workers
     rstart=1
     rstop=part
     z=0
+    print("[*]Launching attack")
     while z < workers:
-        p=multiprocessing.Process(target=generate_smooths, args=(lists,procnum,return_dict,n,primeslist2,csl,rstart,rstop))
+        p=multiprocessing.Process(target=find_sm, args=(rstart,rstop,csl,lists,n,primeslist2,procnum,return_dict))
         rstart+=part  
         rstop+=part  
         jobs.append(p)
@@ -586,9 +584,7 @@ def equation(y,x,n,mod):
 
 def make_vector(n_factors,factor_base): 
     '''turns factorization into an exponent vector mod 2'''
-    
     exp_vector = [0] * (len(factor_base))
-    # print(n,n_factors)
     for j in range(len(factor_base)):
         if factor_base[j] in n_factors:
             exp_vector[j] = (exp_vector[j] + n_factors.count(factor_base[j])) % 2
@@ -684,7 +680,6 @@ def find_solution_x(n,mod,y):
 
 def normalize_sols(n,sum1):  
     sum1,total=create_partial_results(sum1)
-
     return sum1,total    
 
 def build_sols_list(prime1,n,test1,mod1):
@@ -718,23 +713,17 @@ def build_sols_list(prime1,n,test1,mod1):
             lift+=1 
     test1.append(mult1[0])
     test1.append(mult1[1])
-                
     mod1*=mult1[0]
     return test1,mod1
 
 def init(n,primeslist1,primeslist2):    
     global workers
     lists=[]
-    mods=[]
-    i=0
-    while i < 1:
-        lists.append([])
-        mods.append(1)
-        i+=1
+    mods=1
     i=0
     while i < len(primeslist1):
         prime1=primeslist1[i]
-        lists[i%1],mods[i%1]=build_sols_list(prime1,n,lists[i%1],mods[i%1])
+        lists,mods=build_sols_list(prime1,n,lists,mods)
         i+=1          
     launch(lists,n,primeslist2)
     return 
@@ -754,11 +743,6 @@ def main():
     if key == 0:
         print("\n[*]Generating rsa key with a modulus of +/- size "+str(keysize)+" bits")
         publicKey, privateKey,phi,p,q = generateKey(keysize//2)
-       # p=661
-       # q=709
-     #   p=824604972197
-     #   q=842701599533
-
         n=p*q
         key=n
     else:
