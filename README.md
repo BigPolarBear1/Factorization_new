@@ -17,3 +17,5 @@ Update: Ok. Tomorrow I'll upload a slightly improved PoC. It will find smooths f
 WAIT A MINUTE!! Ofcourse I can use an "algebraic base" ..  I already worked out the number theory for that... dude, I can code this number field sieve stuff in a handful of days now... I have everything already worked out in that shitty old paper!!! Lets go fuckers. Plus im not restricted by having to choose some arbitrary polynomial.
 
 Its funny how suddenly everything is starting to connect...man, this is so cool. Once I implement this number field sieve stuff, I want to keep going. I dont want to do bugs, I want to do math.
+
+Im an amateur, and even to me its obvious now. People must have known back in august when i reduced it to quadratic coefficients.. none of this makes sense. Did people think im stupid and wouldnt figure this out eventually?
