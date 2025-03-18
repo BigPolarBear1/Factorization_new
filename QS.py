@@ -3,7 +3,7 @@
 ###Modified existing QS code to use quadratic coefficients instead
 ###Note: After further research, I came to the conclusion, it would be much better to use quadratic coefficient as algebraic factor base and use a similar approach as number field sieve.
 ###Will upload a version doing this soon. 
-###Code that I used as a template:
+###Code that I used as a template: https://github.com/NachiketUN/Quadratic-Sieve-Algorithm
 
 from math import fabs, ceil, sqrt, exp, log, log2
 import random
