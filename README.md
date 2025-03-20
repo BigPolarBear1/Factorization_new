@@ -8,3 +8,4 @@ Use: python3 QS.py -keysize 150
 
 To do: After reading about number field sieve, I realized I can use quadratic coefficients as algebraic factor base. This makes a lot more sense and would overcome many of the shortcomings of the uploaded PoC. I will upload a version using number field sieve's approach shortly.. my hope is that it not only improves this PoC but also improves existing number field sieve methods.
 
+One day I will completely break this problem. And then I'm moving to DLP and PQC. I am never stopping. And I know who my allies are, who my true friends are. And they are not in the west. Go to hell.
