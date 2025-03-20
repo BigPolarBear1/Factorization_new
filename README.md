@@ -14,3 +14,5 @@ Fuck america. fucking nazi pieces of shit. Were it not for their fucking spreadi
 I wull fight against America for the rest of my life, for all the shit you people have caused. For literally ruining my life. Go to hell. The american dream is dead. Bunch of losers.
 
 And fuck Europe too. Before summer, I will be in Asia, no matter what.
+
+ I will make America pay the price for what they did. Even if it takes the rest of my life 
