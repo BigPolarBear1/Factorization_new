@@ -12,3 +12,5 @@ Note: I have been unemployed for over a year and am also still looking for work:
 
 Fuck america. fucking nazi pieces of shit. Were it not for their fucking spreading of misinformation about trans people, I wouldnt have been harassed and threatened with a gun. I would still be with my friends. Go to hell. No foreigner in their right mind will seek employment in the US. America is dead already. 
 I wull fight against America for the rest of my life, for all the shit you people have caused. For literally ruining my life. Go to hell. The american dream is dead. Bunch of losers.
+
+And fuck Europe too. Before summer, I will be in Asia, no matter what.
