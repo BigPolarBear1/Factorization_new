@@ -32,3 +32,5 @@ Update: Bleh, didn't get to finish my python implementation of GNFS yet. I wasnt
 
 
 Fuck america, fuck trump, fuck elon. Ill destroy all those fuckers. Literally these people are the reason I got threatened with a gun by strangers. All fucking bullshit and misinformation they spread. They know what they are doing. Dont come to europe. Ill end you fuckers.
+
+I swear, im going to destroy the entire american economy, i know exactly what to do.
