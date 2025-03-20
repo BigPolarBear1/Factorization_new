@@ -11,3 +11,4 @@ To do: After reading about number field sieve, I realized I can use quadratic co
 Note: I have been unemployed for over a year and am also still looking for work: big_polar_bear1@proton.me 
 
 Fuck america. fucking nazi pieces of shit. Were it not for their fucking spreading of misinformation about trans people, I wouldnt have been harassed and threatened with a gun. I would still be with my friends. Go to hell. No foreigner in their right mind will seek employment in the US. America is dead already. 
+I wull fight against America for the rest of my life, for all the shit you people have caused. For literally ruining my life. Go to hell. The american dream is dead. Bunch of losers.
