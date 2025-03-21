@@ -18,3 +18,6 @@ Massive depression again. I have given up on ever being near my friends again. I
 You know. At this point. It doesn't matter anymore. Because even if at this very moment, nobody else believes in my math work. I believe in it. The fact that I got these quadratic coefficients working with Quadratic sieve basically implies it will 100% work with number field sieve too as algebraic factor base. And it's out here on github and I know people are looking at it. And it's only a matter of time, until others see the truth too. And if they don't, yea well, I'll keep uploading improved versions.. until I reach my final implementation, write it in c and set a factoring record. Prime factors don't lie. You can ignore the math, but you can't ignore the prime factors, and neither will your authentication protocols ignore them. haha. Fuck Microsoft.
 
 Fuck america and fuck europe. Fucking nazi losers. I'll fight america to the death. For everything they did. For their lack of respect and for the harassment.
+
+Literally, the harassment, getting threatened with a gun, msft portraying me as incompetent, all bc of fucking MAGA anti-trans misinformation. I garantuee you this, I will make sure this will cost america everything they have.
+Ruined my life you fuckers.
