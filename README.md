@@ -21,3 +21,5 @@ Fuck america and fuck europe. Fucking nazi losers. I'll fight america to the dea
 
 Literally, the harassment, getting threatened with a gun, msft portraying me as incompetent, all bc of fucking MAGA anti-trans misinformation. I garantuee you this, I will make sure this will cost america everything they have.
 Ruined my life you fuckers.
+
+Literally nothing to lose anymore. Headed to Asia one way or another, whatever it takes. And if anyone tries to stop me, im ready to die. Took everything fron me and ruined my life. Nothing left to lose now.
