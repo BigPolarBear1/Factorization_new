@@ -23,3 +23,5 @@ Literally, the harassment, getting threatened with a gun, msft portraying me as 
 Ruined my life you fuckers.
 
 Literally nothing to lose anymore. Headed to Asia one way or another, whatever it takes. And if anyone tries to stop me, im ready to die. Took everything fron me and ruined my life. Nothing left to lose now.
+
+Tomorrow ill figure out the number theory for using quadratic coefficients with NFS.. I am so depressed, it physically hurts. The memories of my friends, all so far away now.. I hate msft. That company ruined my life and the life of my manager. I swear, those people better never cross my path... I will succeed with my math. I may not be "book smart" like all the douche bags on social media .. but I understand this problem better then any of them. They havnt spent months tinkering with numbers like I have. 
