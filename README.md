@@ -42,4 +42,4 @@ Chasing your dreams is really hard. To keep pushing on with my entire life in ru
 
 Got an hour of work done (at 4 am in the night, restless). Figured out the number theory.. it does work. It absolutely works. It just becomes a trick of finding favorable quadratic coefficient combinations... such that x^2 - y*x + c = 0 mod N .. and algebraic smooth candidates generated have to be small. 
 
-
+I wonder... there suddenly is this massive surge of ideas in my head... there's definitely a lot to explore here... I think with everything I know.. I can make it work much better in the second degree, without having to go to higher degree polynomials... I feel almost certain I can. 
