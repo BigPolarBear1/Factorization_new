@@ -62,3 +62,5 @@ Massive depression. I should start figuring out how I'm going to finish my proof
 And fuck Elon Musk. Fucker better have an army of body guards. Fucking piece of shit. Grow some eyes in your backs you stupid fuckers. War is coming for all of you now. Fuckers messing with shit beyond their comprehension.
 
 Literally, America's current administration is playing a game they will lose. No matter what moves they make. They will lose. They cant fight what is coming for them. They cant even comprehend it.
+
+One day the world will be Utopia. And the fight for that world is not one you americans will win. Your exlusionary politics oppose all that is good in humanity. And the enemies you are now fighting will destroy you.
