@@ -45,3 +45,5 @@ Got an hour of work done (at 4 am in the night, restless). Figured out the numbe
 I wonder... there suddenly is this massive surge of ideas in my head... there's definitely a lot to explore here... I think with everything I know.. I can make it work much better in the second degree, without having to go to higher degree polynomials... I feel almost certain I can. 
 
 OOOOOH!!! If I group quadratic coefficients together, that require the same amount of N to be subtracted to reach 0, like I do in my uploaded quadratic sieve PoC... then from there I should be somehow be able to generate small polynomials in the second degree... I can see it abstractly in my head already and I feel confident that is how to do it... I'll need to work out the actual math though.
+
+I dont see why I cant just use small polynomials mod p instead of mod N.. I am suddenly having a very omnious foreboding feeling. Like, oh shit. Part of me hopes, when I run the numberd tomorrow, it isnt possible. If it does work, then fuck. I hope I cant get it to work tonorrow. Bc the CIA will 100% kill me if it works since they hate trans people.
