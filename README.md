@@ -21,3 +21,5 @@ You know what the irony is? Its that none of that fucking android/ios/chrome att
 Fuck man. Going to go find some more Chinese companies to apply to today. I'm getting out of this death trap no matter what. Fuck belgium and fuck europe. Not going to die here like this you stupid fuckers. 
 
 I swear, any fucking european cop harass me and ill fucking kill them. I'm ready to do final battle.
+
+I dont know what worse, getting threatened in the US with a gun, kicked out, forced to leave the friends behind I had to known for years, just to come back to this european shithole, where law enforcement is going around telling people not to do business with me. WHere my fucking bank account gets closed and my funds frozen. Yea, fuck you. Fuck europe. fucking losers.
