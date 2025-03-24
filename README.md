@@ -27,3 +27,5 @@ I dont know what worse, getting threatened in the US with a gun, kicked out, for
 This is a warning to everyone doing business with EU law enforcement: I'll fucking kill you.
 
 Seriously man. At this point ill move to fucking Russia if a company there hired me. Fuck europe 1000 times over. This place, I never had a future, this place has always been a slow death. I rather get threatened with guns in america then this life. Literally wasting my life here. I fucking hate this country. I will gladly go to war against europe, hack all their systems.
+
+Im telling you this. I rather go down fighting, then die this slow death. 
