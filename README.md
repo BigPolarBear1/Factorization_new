@@ -19,3 +19,5 @@ Belgian feds better watch their backs. Fucking cunts.
 You know what the irony is? Its that none of that fucking android/ios/chrome attack surface shit is hard. They all pretend like they are the best or some shit. You just read code you fucking nerds. You do client side execution, wow, so hard. Fucking morrons. No skill losers.
 
 Fuck man. Going to go find some more Chinese companies to apply to today. I'm getting out of this death trap no matter what. Fuck belgium and fuck europe. Not going to die here like this you stupid fuckers. 
+
+I swear, any fucking european cop harass me and ill fucking kill them. I'm ready to do final battle.
