@@ -23,5 +23,8 @@ Fuck man, I would even go work for a crime organization right now if it got me o
 
 I guess today was a sunday, maybe its not the end of the world to not get work do ne on a sunday and be depressed. Maybe tomorrow I should put my alarm early, get up, get my run in, and just destroy factorization like a savage bear, haha..
 
+I notice a lot of suspicious signals ever since August 23rd when I first published my work.. and it hasn't decreased since then.. I'm definitely on someone's radar. But then again, its likely just a mix of threat intel folks and my Canadian stalker. If people were legit concerned about my work, they could just pay me and have it all for themselves, right? RIGHT????????????????????????? Maybe its wishful thinking due to depression and isolation.. wishing anything I did still mattered. Odds are people just think I've lost my mind, and they just google me like they go see animals in the zoo lol. 
+
+Either one of two things are going to happen next week. I realize that all my findings up until now have just been a much weaker version of number field sieve due to my limited understanding, and I just limited myself to polynomials of the second degree for no good reason. Oooor... finding smooths with coefficients in mod p, will work, because of my very specific way of representing factorization as a system of quadratics.. the math I ran yesterday seems to indicate that it should.. yet with abstract algebra there is always the danger of overlooking hidden complexity somewhere.. I think I will legit quit life if this results in nothing but a waste of 2 years. Just nothing left but pain and sadness.. I just couldn't accept that reality.. hence this has to work now.
 
 
