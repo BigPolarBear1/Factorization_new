@@ -25,3 +25,5 @@ I swear, any fucking european cop harass me and ill fucking kill them. I'm ready
 I dont know what worse, getting threatened in the US with a gun, kicked out, forced to leave the friends behind I had to known for years, just to come back to this european shithole, where law enforcement is going around telling people not to do business with me. WHere my fucking bank account gets closed and my funds frozen. Yea, fuck you. Fuck europe. fucking losers.
 
 This is a warning to everyone doing business with EU law enforcement: I'll fucking kill you.
+
+Seriously man. At this point ill move to fucking Russia if a company there hired me. Fuck europe 1000 times over. This place, I never had a future, this place has always been a slow death. I rather get threatened with guns in america then this life. Literally wasting my life here. I fucking hate this country. I will gladly go to war against europe, hack all their systems.
