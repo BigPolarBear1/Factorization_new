@@ -15,3 +15,5 @@ Seriously fuck Europe, fuck Belgium. I'll fight the Belgian government, fucking 
 Fuck Europe too. Literally, European infosec are fucking cunts. All they know is android,  ios and chrome. If I ever meet one of these cunts, I'll bash their fuckings heads in. Fucking politics. Telling their federal friends to not do business with me, bc they know I would outcompete them. Fucking no talent shithead losers. Cunts who havnt worked hard once in their lives. I'm ready to die. I'll fight all these fuckers.
 
 Belgian feds better watch their backs. Fucking cunts.
+
+You know what the irony is? Its that none of that fucking android/ios/chrome attack surface shit is hard. They all pretend like they are the best or some shit. You just read code you fucking nerds. You do client side execution, wow, so hard. Fucking morrons. No skill losers.
