@@ -31,3 +31,5 @@ Seriously man. At this point ill move to fucking Russia if a company there hired
 Im telling you this. I rather go down fighting, then die this slow death. 
 
 Not like all of it will matter soon... nobody believes in my work. But its just a matter of time. Fucking morrons could have had it all had they just shown some fucking respect. The fuck do I care. The moment I succeed, I will get 10000 job offers from countries like China, and I know where I'll want to be, and its not in this European shithole.
+
+Seriously man. I dont know if I can just go to China to meet a stranger... but arrange for me a visa or passport, or invite to the embassy, so I know its for real and not some internet stranger who could be a troll... and I'll go, I'll leave today if I must. I'll go to China, I'll go to Russia... I don't care.. what is here for me in the west? An entire career of being treated like shit and getting nowhere despite everything I have achieved. Want to hack msft windows? I'll fucking show you how to do it. I fucking despise the west so much.
