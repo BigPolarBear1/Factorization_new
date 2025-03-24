@@ -28,3 +28,5 @@ Burn in hell. All you people think youre so much better at me. You think me find
 
 
 Aaaand booom.... I just figured out how to find smooths by looking ath quadratic coefficients mod p...... probably should have realized this weeks ago... feeling a bit slow... reminds me of highschool when I sucked at math. Anyway... give me a few good days of a better mood and some sleep... and a much much much much much better PoC is about to come online. Its actually ver simple. Don't need to do complicated stuff like number field sieve.
+
+FUCK. FUCK. Its kind of trivial to set up a^2 = b^2 mod N if I know the values of quadratic coefficients mod p, together with all the other stuff I worked out so far. Don't need to do all this retarded shit. Just build it on both side... its fucking easy. Just abstract algebra. AH FUCK. GO TO HELL. Maybe me being slow and retarded in my final days of my math project is fate. Maybe fate wants you fuckers to have a couple more day. But go to hell. GO TO HELL.
