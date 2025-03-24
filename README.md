@@ -29,3 +29,5 @@ This is a warning to everyone doing business with EU law enforcement: I'll fucki
 Seriously man. At this point ill move to fucking Russia if a company there hired me. Fuck europe 1000 times over. This place, I never had a future, this place has always been a slow death. I rather get threatened with guns in america then this life. Literally wasting my life here. I fucking hate this country. I will gladly go to war against europe, hack all their systems.
 
 Im telling you this. I rather go down fighting, then die this slow death. 
+
+Not like all of it will matter soon... nobody believes in my work. But its just a matter of time. Fucking morrons could have had it all had they just shown some fucking respect. The fuck do I care. The moment I succeed, I will get 10000 job offers from countries like China, and I know where I'll want to be, and its not in this European shithole.
