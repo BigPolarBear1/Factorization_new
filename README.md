@@ -23,3 +23,5 @@ Fuck man. Going to go find some more Chinese companies to apply to today. I'm ge
 I swear, any fucking european cop harass me and ill fucking kill them. I'm ready to do final battle.
 
 I dont know what worse, getting threatened in the US with a gun, kicked out, forced to leave the friends behind I had to known for years, just to come back to this european shithole, where law enforcement is going around telling people not to do business with me. WHere my fucking bank account gets closed and my funds frozen. Yea, fuck you. Fuck europe. fucking losers.
+
+This is a warning to everyone doing business with EU law enforcement: I'll fucking kill you.
