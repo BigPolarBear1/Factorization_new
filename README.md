@@ -11,3 +11,5 @@ To do: Final version will be released soon. It borrows number field's smooth fin
 Still looking for work, will relocate: big_polar_bear1@proton.me
 
 Seriously fuck Europe, fuck Belgium. I'll fight the Belgian government, fucking cunts all of them. I despise this country. Getting out of here no matter the cost. Even if I need to turn to crime. Come get me. I'm ready to die. I'll go out fighting you all fuckers.
+
+Fuck Europe too. Literally, European infosec are fucking cunts. All they know is android,  ios and chrome. If I ever meet one of these cuts, I'll bash their fuckings heads in. Fucking politics. Telling their federal friends to not do business with me, bc they know I would outcompete them. Fucking no talent shithead losers. Cunts who havnt worked hard once in their lives. I'm ready to die. I'll fight all these fuckers.
