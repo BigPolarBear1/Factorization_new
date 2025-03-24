@@ -18,3 +18,8 @@ Fuck it. a^2 = b^2 mod N, both side can be represented seperately in an exponent
 I swear, someone knows. Someone knows I am right about my approach. And damn you all to hell for treating me like the enemy. If I act the way I do, its exactly for these reasons. You all deserve to burn in hell. After all I have done in my career, bugs in OpenSsl, Secure Channel, IKE, kerberos ... etc etc... this is how I get treated lol. You're all going to burn for this.
 
 I dont even know what people are thinking. That i'm just going to stop? Give up? Youre only hope of me giving up is if I kill myself. And honestly, there were days lately, where that almost happend... but I know I am right. And I know I can do it. And I will do it. And go to hell.
+
+Just thinking out loud..
+
+148^2 = 0 mod 37   ... so any 0 quadratic coefficients... if I combine them we will have a multiple of those moduli .. easy way to construct smooths on one side.
+if we have 148^2 = 66^2 mod 4387 ... 66^2 mod 37 = 27  ... which is equal to 148^2 - 4*4387 = 27 mod 37 .. hmm.. now if we look at all quadratic coefficients mod p1, p2, p3, p4 ... and we see which one reaches 0 when subtracted 4N ... then we know which factors will be generated on the other side!!!!!!!!!!!!!!!!!!!!!!!!!!! Aha. Now I need to figure out a way to figure out if they will be smooth or not... I can do that... shouldnt be hard. God damnit, I was so close already with my uploaded PoC. One more adjustment... dont want to brute force combine coefficients and test for smoothness... I should be able to determine which combinations will be smooth with the power of ABSTRACT ALGEBRA AND NUMBER THEORY!!!!!!!!!!!! Yes. Its not that hard. Hell, I doubt I'll even have to make it as complicated as number field sieve's approach. 
