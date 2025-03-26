@@ -19,3 +19,5 @@ This next version will be a magnititude better then what is uploaded... this is 
 Else whatever... this last year has been nothing but pain, and I don't really care anymore.
 And all politicians rave about is anti-trans bullshit, fucking clown world. 
 Maybe this had to happen.
+
+Oh well... what does it even matter. I think if msft hadn't fired my manager, then maybe, there was a chance, this would have had another outcome.. but they fired the best manager in the world, so now I'm firing the world, haha. 
