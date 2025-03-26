@@ -13,3 +13,9 @@ Still looking for work, will relocate: big_polar_bear1@proton.me
 Beginning to finalize the final version of the algorithm... should be done soon. 
 
 Ok, who wants to buy my work in return for delayed publication of one year? Please email. Thanks.
+
+The final version will find smooths without bruteforcing coefficient permutations... it's actually quite easy and a lot more straight forward then number field sieve, mainly due to our reduction to coefficients.
+This next version will be a magnititude better then what is uploaded... this is my very final warning. I don't think anybody believes in my work... but if someone does, and wants to prevent what is going to happen... now is the time. 
+Else whatever... this last year has been nothing but pain, and I don't really care anymore.
+And all politicians rave about is anti-trans bullshit, fucking clown world. 
+Maybe this had to happen.
