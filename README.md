@@ -10,3 +10,8 @@ To do: Final version will be released soon. Will build smooths on both sides of 
 
 Still looking for work, will relocate: big_polar_bear1@proton.me
 
+Update: Internet went down for an entire day. Fucking twilight zone.
+It doesnt matter. I know people will downplay me, untill my final version comes online, which will be soon.
+Guess there is safety in not getting taken seriously.
+Ive worked out one way to build smooths on both sides of a congruences already. Going to do math for a few more days to make sure there isnt an even easier way.. and after that the math should be done.
+All this shit, people trying to ruin my life.. its not going to matter soon...
