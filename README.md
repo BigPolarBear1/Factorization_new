@@ -10,4 +10,4 @@ To do: Final version will be released soon. Will build smooths on both sides of 
 
 Still looking for work, will relocate: big_polar_bear1@proton.me
 
-God damnit, this might break factorization harder then I first anticpated... I'll need to run some more numerical examples to make sure... ergh, my head hurts.
+Beginning to finalize the final version of the algorithm... should be done soon. 
