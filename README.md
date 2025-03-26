@@ -20,3 +20,7 @@ I try not to think about the absurdity of it all.
 I just wanted to be with my friends.
 
 A few more days now... then all of this is finally over.
+
+Alright... I think I have the most optimal solution for finding smooths mod P.
+
+If we have p * q = 41 * 107 = 4387   .. we can write this as 41^2 -148 * 41 + 4387 = 107^2 - 66 * 107 - 4387 ... which we can turn into an equation with variables.. and reduce to prime fields ... find smooths on both sides.. etc 
