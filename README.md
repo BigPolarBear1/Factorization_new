@@ -15,3 +15,8 @@ It doesnt matter. I know people will downplay me, untill my final version comes 
 Guess there is safety in not getting taken seriously.
 Ive worked out one way to build smooths on both sides of a congruences already. Going to do math for a few more days to make sure there isnt an even easier way.. and after that the math should be done.
 All this shit, people trying to ruin my life.. its not going to matter soon...
+
+I try not to think about the absurdity of it all. 
+I just wanted to be with my friends.
+
+A few more days now... then all of this is finally over.
