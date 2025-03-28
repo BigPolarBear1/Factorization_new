@@ -31,3 +31,13 @@ People are such bloody idiots. They do not know what I've worked out since my la
 I feel deep sadness, about the devastation in my life, and that of my friends. My manager didn't deserve the way he was treated. Back in 2019, he flew all the way to Belgium, to come meet me, when I was struggling and nobody in this industry wanted to hire me. One of the only people who believed in me. I just feel endless rage now. I will never let this injustice go. I will drag you all to hell with me.
 
 Going to break the minds of all the haters and transphobes. We're at war, and I'm waging war against you all. Haha. Just getting started.
+
+Ok. Let me give a hint of what will drop in a few days. So as long as both sides of the congruences are inside the factor base i.e:
+
+148^2 = 66^2 mod 4387
+
+148 = 37 * 4
+66 = 2 * 3 * 11
+
+By looking at quadratic coefficients in mod 2,3,4,11,37 .. we can immediatly isolate them and see that they "belong together" and build a smooth that satisfies our equation.
+And since calculating quadratic coefficients is extremely fast.... this means you're all fucked. Haha. Why would you fire the best manager in the world? Did you all want to get fucked by a polar bear? Are you all stupid? Go to hell.
