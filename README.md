@@ -27,4 +27,3 @@ Fucking stalkers mad. For years these stalkers been reporting me everywhere to g
 Fucking clowns. Cry more fucking stalkers. 
 Anyway, took a day off yesterday.. time to get things ready for release now.
 
-Literally, western infosec are the worst type of people. You know the type of loser in highschool who always complained to the principal? Yea, thats western infosec. Punch you in your face cunts.
