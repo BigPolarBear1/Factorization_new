@@ -1,4 +1,4 @@
-!!!Work in progress!!!! 
+of!!!Work in progress!!!! 
 
 Uploaded a new version (18 march):
 
@@ -21,3 +21,8 @@ And all politicians rave about is anti-trans bullshit, fucking clown world.
 Maybe this had to happen.
 
 Oh well... what does it even matter. I think if msft hadn't fired my manager, then maybe, there was a chance, this would have had another outcome.. but they fired the best manager in the world, so now I'm firing the world, haha. 
+
+Great, someone reported this repo to github.
+Fucking stalkers mad. For years these stalkers been reporting me everywhere to get me banned.
+Fucking clowns. Cry more fucking stalkers. 
+Anyway, took a day off yesterday.. time to get things ready for release now.
